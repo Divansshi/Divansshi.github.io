@@ -326,7 +326,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;p
   <figure class="reel">
     <div class="frame">
       <div class="bar mono" aria-hidden="true"><i></i><i></i><i></i><span>divansshi.pythonanywhere.com</span></div>
-      <video id="reel" src="assets/attendai/attendai-demo.mp4" poster="assets/attendai/poster.jpg" muted loop playsinline preload="metadata" aria-label="Two-minute walkthrough of AttendAI: enrolling a student, rejected scans, a successful scan, a live session and the audit log"></video>
+      <video id="reel" src="attendai-demo.mp4" poster="poster.jpg" muted loop playsinline preload="metadata" aria-label="Two-minute walkthrough of AttendAI: enrolling a student, rejected scans, a successful scan, a live session and the audit log"></video>
     </div>
     <figcaption class="mono"><span>The full walkthrough, 2 min. Enroll, a wrong face, a match, once per day, live session, audit log.</span><button class="vid-toggle mono" id="vidToggle" type="button">Play</button></figcaption>
   </figure>
@@ -403,8 +403,8 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;p
         <p>I sketched the main screens before building them. Drag across the dashboard to compare the wireframe with what shipped. The stat cards survived; the weekly chart and CSV button didn't make it into the first version.</p>
         <figure>
           <div class="compare" id="compare">
-            <img src="assets/attendai/lecturer-dashboard.jpg" alt="Wireframe of the lecturer dashboard, then called FaceAttend, with stat cards, a weekly chart and a CSV export button">
-            <img class="after" src="assets/attendai/shipped-dashboard.jpg" alt="The shipped AttendAI lecturer dashboard with three stat cards and the list of today's classes">
+            <img src="lecturer-dashboard.jpg" alt="Wireframe of the lecturer dashboard, then called FaceAttend, with stat cards, a weekly chart and a CSV export button">
+            <img class="after" src="shipped-dashboard.jpg" alt="The shipped AttendAI lecturer dashboard with three stat cards and the list of today's classes">
             <span class="lbl l mono">Wireframe</span><span class="lbl r mono">Shipped</span>
             <span class="handle" aria-hidden="true"></span>
             <input type="range" min="0" max="100" value="50" id="cut" aria-label="Compare wireframe and shipped dashboard">
@@ -412,10 +412,10 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;p
           <figcaption class="mono">Lecturer dashboard, wireframe vs shipped</figcaption>
         </figure>
         <div class="shots">
-          <figure><img src="assets/attendai/student-self-scan.jpg" alt="Wireframe of the student self-scan screen" loading="lazy"><figcaption class="mono">Student self-scan</figcaption></figure>
-          <figure><img src="assets/attendai/student-attendance-record.jpg" alt="Wireframe of a student's attendance record with a percentage ring" loading="lazy"><figcaption class="mono">Attendance record</figcaption></figure>
-          <figure><img src="assets/attendai/lecturer-enroll.jpg" alt="Wireframe of the enroll student form" loading="lazy"><figcaption class="mono">Enroll a student</figcaption></figure>
-          <figure><img src="assets/attendai/student-confirmation-error.jpg" alt="Wireframe of the error screen shown when a scan fails" loading="lazy"><figcaption class="mono">Scan rejected</figcaption></figure>
+          <figure><img src="student-self-scan.jpg" alt="Wireframe of the student self-scan screen" loading="lazy"><figcaption class="mono">Student self-scan</figcaption></figure>
+          <figure><img src="student-attendance-record.jpg" alt="Wireframe of a student's attendance record with a percentage ring" loading="lazy"><figcaption class="mono">Attendance record</figcaption></figure>
+          <figure><img src="lecturer-enroll.jpg" alt="Wireframe of the enroll student form" loading="lazy"><figcaption class="mono">Enroll a student</figcaption></figure>
+          <figure><img src="student-confirmation-error.jpg" alt="Wireframe of the error screen shown when a scan fails" loading="lazy"><figcaption class="mono">Scan rejected</figcaption></figure>
         </div>
       </section>
 
@@ -609,9 +609,9 @@ def _enrolled_embedding(photo_path):
         </a>
         <p>To try it: sign in to the lecturer portal, enroll yourself with your webcam, then go to the student portal and scan. Your photo is deleted after 24 hours.</p>
         <div class="shots three">
-          <figure><img src="assets/attendai/shipped-noface.jpg" alt="Scan screen showing No face detected" loading="lazy"><figcaption class="mono">No face, no scan</figcaption></figure>
-          <figure><img src="assets/attendai/shipped-blocked.jpg" alt="Scan screen showing the student is blocked because they already marked attendance today" loading="lazy"><figcaption class="mono">Once per day</figcaption></figure>
-          <figure><img src="assets/attendai/shipped-hybrid.jpg" alt="Class settings with a hybrid mode toggle for each class" loading="lazy"><figcaption class="mono">Hybrid mode per class</figcaption></figure>
+          <figure><img src="shipped-noface.jpg" alt="Scan screen showing No face detected" loading="lazy"><figcaption class="mono">No face, no scan</figcaption></figure>
+          <figure><img src="shipped-blocked.jpg" alt="Scan screen showing the student is blocked because they already marked attendance today" loading="lazy"><figcaption class="mono">Once per day</figcaption></figure>
+          <figure><img src="shipped-hybrid.jpg" alt="Class settings with a hybrid mode toggle for each class" loading="lazy"><figcaption class="mono">Hybrid mode per class</figcaption></figure>
         </div>
 
         <h3>What I'd change next</h3>
