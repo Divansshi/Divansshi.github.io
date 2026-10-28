@@ -252,6 +252,8 @@ figure figcaption{margin-top:.7rem;color:var(--fg-faint)}
 .after a:hover,.after a:focus-visible{background:var(--pink);color:#000}
 .after .t{font:500 clamp(2rem,6vw,5rem)/1 var(--sans);letter-spacing:-.05em}
 .after .arr{font-size:clamp(1.6rem,4vw,3rem)}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{color:var(--pink)}
 footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;padding:1.4rem var(--gutter) max(2rem,env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--fg-faint)}
 
 .orb{position:fixed;left:0;top:0;width:5.5rem;height:5.5rem;border-radius:50%;pointer-events:none;z-index:80;opacity:0;transition:opacity .3s;
@@ -290,7 +292,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;p
 <div class="orb" id="orb" aria-hidden="true"></div>
 
 <header class="nav">
-  <a class="brand mono" href="index.html">Divansshi<br>&copy;2026</a>
+  <a class="brand mono" href="index.html">Divansshi<br>Mukunthan</a>
   <nav class="nav-links mono" aria-label="Main">
     <a href="index.html#entries">Entries</a>
     <a href="index.html#record">Record</a>
@@ -306,7 +308,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;p
   </div>
 </header>
 
-<main>
+<main id="top">
   <header class="head">
     <p class="crumb mono"><a href="index.html#entries">&larr; Entries</a><span>Entry [01]</span><span>Filed 28 Oct 2026</span><span id="readtime">10 min read</span></p>
     <h1 class="grad">AttendAI</h1>
@@ -634,9 +636,9 @@ def _enrolled_embedding(photo_path):
 </main>
 
 <footer class="mono">
-  <span>&copy;2026 Divansshi Mukunthan</span>
+  <span>Divansshi Mukunthan &middot; Kuala Lumpur</span>
   <span><a href="https://www.linkedin.com/in/divansshiii" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/Divansshi" target="_blank" rel="noopener">GitHub</a></span>
-  <span>Keys 1 to 3 change the tint</span>
+  <a href="#top">Back to top &uarr;</a>
 </footer>
 
 <script>

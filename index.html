@@ -86,7 +86,18 @@ a{color:inherit}
 
 /* ---------- about ---------- */
 .about{position:relative;height:230vh}
-.about-pin{position:sticky;top:0;height:100svh;display:grid;align-content:center;justify-items:start;padding:0 var(--gutter);gap:1.6rem}
+.about-pin{position:sticky;top:0;height:100svh;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(2rem,6vw,6rem);padding:0 var(--gutter)}
+.about-text{display:grid;gap:1.6rem;justify-items:start;min-width:0}
+.about-h{margin:0;font:500 clamp(2.4rem,5.6vw,5rem)/.95 var(--sans);letter-spacing:-.055em;text-wrap:balance}
+.portrait{position:relative;justify-self:center;width:min(100%,25rem);aspect-ratio:4/5;margin:0;border-radius:26px;overflow:hidden;border:1px solid var(--glass-edge);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 40px 100px -30px var(--pink-soft);transform:rotate(2.5deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.portrait:hover{transform:rotate(0deg) scale(1.01)}
+.portrait img{width:100%;height:100%;object-fit:cover;will-change:filter}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.portrait figcaption{position:absolute;z-index:1;left:1rem;bottom:.9rem;color:rgba(255,255,255,.85)}
+.portrait .chip{position:absolute;z-index:1;top:.9rem;left:.9rem;display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .6rem;border-radius:999px;
+  background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);font-size:.66rem;color:#fff}
+.portrait .chip::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--pink);box-shadow:0 0 0 3px var(--pink-soft)}
 .tag{display:inline-block;padding:.28rem .55rem;border-radius:4px;background:var(--pink);color:#000;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase}
 .statement{margin:0;max-width:44rem;font:400 clamp(1.45rem,3.2vw,2.4rem)/1.28 var(--sans);letter-spacing:-.025em}
 .statement .w{display:inline-block;margin-right:.26em}
@@ -188,6 +199,8 @@ html.reduce #stars{display:none}
 .tile:hover::before{opacity:1}
 .tile .v{position:relative;font:500 1.5rem/1.1 var(--sans);letter-spacing:-.03em}
 .tile .k{position:relative;color:var(--fg-dim)}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{color:var(--pink)}
 footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem;padding:1.4rem var(--gutter) max(2rem,env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--fg-faint)}
 .foot-tints{display:none;align-items:center;gap:.8rem}
 
@@ -204,6 +217,11 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
   .nav-links{display:none}
   .nav .tints{display:none}
   .foot-tints{display:flex}
+  .about-pin{grid-template-columns:minmax(0,1fr);align-content:center;gap:1.4rem;padding-top:4.5rem}
+  .portrait{order:-1;justify-self:start;width:min(42vw,11rem);border-radius:18px;transform:rotate(-2deg)}
+  .portrait .chip,.portrait figcaption{display:none}
+  .about-h{font-size:clamp(2rem,9vw,2.6rem)}
+  .statement{font-size:1.2rem}
   .row>a,.row>div{grid-template-columns:2.6rem minmax(0,1fr) 1.6rem;gap:.8rem}
   .row .meta{display:none}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -225,7 +243,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
 <div class="orb" id="orb" aria-hidden="true"></div>
 
 <header class="nav">
-  <a class="brand mono" href="#top">Divansshi<br>&copy;2026</a>
+  <a class="brand mono" href="#top">Divansshi<br>Mukunthan</a>
   <nav class="nav-links mono" aria-label="Main">
     <a href="#entries">Entries</a>
     <a href="#record">Record</a>
@@ -246,7 +264,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
   <section class="hero" id="hero">
     <canvas id="gl" aria-hidden="true"></canvas>
     <div class="hero-copy">
-      <h1 class="grad" aria-label="Built, broken, fixed, filed."><span class="ln"><span>Built, broken,</span></span><span class="ln"><span>fixed, filed.</span></span></h1>
+      <h1 class="grad" aria-label="Projects, start to finish."><span class="ln"><span>Projects,</span></span><span class="ln"><span>start to finish.</span></span></h1>
       <p class="hero-sub mono">Computer science student &middot; Kuala Lumpur <span id="klTime">--:--</span></p>
     </div>
     <div class="marquee mono" aria-hidden="true">
@@ -256,9 +274,16 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
 
   <section class="about" id="about" aria-label="About">
     <div class="about-pin">
-      <span class="tag">About</span>
+      <div class="about-text">
+      <h2 class="about-h grad">Hi, I'm Divansshi.</h2>
       <p class="statement" id="statement">I'm a second-year computer science student at Asia Pacific University, on a dual degree with De Montfort University. I mostly build web apps in Python and Java, and I've interned in software engineering at 99x and in data analysis at DFCC Bank. I'm from Sri Lanka and based in Kuala Lumpur. This site is where I write up the projects I make.</p>
       <a class="btn mono" href="#contact"><span>Get in touch</span><span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <figure class="portrait" id="portrait">
+        <img src="me.jpg" alt="Divansshi Mukunthan" width="960" height="1200">
+        <span class="chip mono">Open to SWE internships</span>
+        <figcaption class="mono">Kuala Lumpur</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -303,7 +328,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
   <section class="record" id="record" aria-labelledby="record-h">
     <div class="entries-head">
       <h2 id="record-h" class="grad">Record</h2>
-      <p class="mono">Updated Oct 2026</p>
+      <p class="mono">Since 2024</p>
     </div>
     <div class="stats">
       <div class="stat"><b>3.94</b><span class="mono">CGPA &middot; Vice Chancellor's List, AY 2025/26</span></div>
@@ -340,7 +365,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
 </main>
 
 <footer class="mono">
-  <span>&copy;2026 Divansshi Mukunthan</span>
+  <span>Divansshi Mukunthan &middot; Kuala Lumpur</span>
   <span class="foot-tints">Tint
     <span class="tints" role="group" aria-label="Pink tint">
       <button class="tint" style="--c:#ff9ec9" data-tint="blush" aria-label="Blush pink" aria-pressed="false"></button>
@@ -348,7 +373,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
       <button class="tint" style="--c:#ff2bc2" data-tint="fuchsia" aria-label="Fuchsia pink" aria-pressed="false"></button>
     </span>
   </span>
-  <span>Keys 1 to 3 change the tint</span>
+  <a href="#top" class="totop">Back to top &uarr;</a>
 </footer>
 
 <script>
@@ -572,8 +597,11 @@ void main(){
   const wspans = words.map(w => { const s = document.createElement('span'); s.className = 'w'; s.textContent = w; statement.appendChild(s); return s; });
   let aboutVisible = false;
   new IntersectionObserver(([e]) => { aboutVisible = e.isIntersecting; }, { threshold: 0 }).observe(about);
+  const portraitImg = document.querySelector('#portrait img');
   function drawAbout(){
     const p = clamp((progress(about) - .08) / .62);
+    const q = reduce ? 1 : clamp(p * 1.8);
+    portraitImg.style.filter = q >= .999 ? '' : 'grayscale(' + (1 - q).toFixed(3) + ') brightness(' + (.65 + .35 * q).toFixed(3) + ')';
     const N = wspans.length;
     wspans.forEach((s, i) => {
       const t = reduce ? 1 : clamp(p * (N + 5) - i, 0, 5) / 5;
